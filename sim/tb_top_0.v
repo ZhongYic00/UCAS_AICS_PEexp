@@ -30,10 +30,10 @@ reg [ 31:0] result[3:0];
 
 initial
 begin
-  $readmemh("D:/pe_exp/data/inst", inst);
-  $readmemh("D:/pe_exp/data/neuron", neuron);
-  $readmemh("D:/pe_exp/data/weight", weight);
-  $readmemb("D:/pe_exp/data/result", result);
+  $readmemh("data/inst", inst);
+  $readmemh("data/neuron", neuron);
+  $readmemh("data/weight", weight);
+  $readmemb("data/result", result);
 end
 
 reg [ 1:0]   inst_addr;
