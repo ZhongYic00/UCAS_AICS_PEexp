@@ -3,8 +3,6 @@
 #define VTOP Vtb_top_0
 #include "Vtb_top_0.h" // Verilated model header for tb_top_0
 
-#define SIM_TIME 10000 // Simulation time in cycles
-
 int main(int argc, char **argv) {
     Verilated::commandArgs(argc, argv);
     VerilatedContext *m_contextp = new VerilatedContext; // Context
