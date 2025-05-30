@@ -18,7 +18,7 @@ SRC_FILES = $(wildcard $(SRC_DIR)/**/*.v)
 CPP_FILE = main.cpp
 
 # Compilation flags
-VERILATOR_FLAGS = --cc --exe --build -Wall -Wno-fatal --timing -Mdir $(BUILD_DIR)
+VERILATOR_FLAGS = --cc --exe --build -Wall -Wno-fatal --timing -Mdir $(BUILD_DIR) --trace-fst --trace-structs --trace-max-array 1024
 
 # Default target
 all: $(TOPS)

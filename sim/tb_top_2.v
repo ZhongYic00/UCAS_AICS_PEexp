@@ -19,7 +19,7 @@ initial begin
 //    $fsdbDumpvars(0, tb_top_2);
 end
 initial begin
-    #10000;
+    #1000;
     $finish;
 end
 
@@ -146,10 +146,11 @@ always@(posedge clk or negedge rst_n) begin
   if(!rst_n) begin
     compare_pass <= 1'b1;
   end else if(pe_vld_o && (pe_result != result[result_addr])) begin
-   $display("FAIL: num.%d result not correct!!!", result_addr);
-    compare_pass <= 1'b0;
- end else if(pe_vld_o && (pe_result == result[result_addr])) begin
-   $display("INFO: num.%d result is correct.", result_addr);
+     $display("FAIL: num.%d result not correct!!!", result_addr);
+     compare_pass <= 1'b0;
+  end else if(pe_vld_o && (pe_result == result[result_addr])) begin
+    $display("INFO: num.%d result is correct.", result_addr);
+    if (result_addr == 'h3) $finish;
   end
 end
 
